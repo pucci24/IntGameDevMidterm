@@ -53,11 +53,15 @@ public class Puppeteer : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCodeInput)) {
+		if (Input.GetKeyDown(KeyCodeInput)) {
 			inputVector = forceVector;
-		} else {
+		} 
+//		else {
+//			inputVector = resetVector;
+//		}
+		if (Input.GetKeyUp(KeyCodeInput)) {
 			inputVector = resetVector;
-		}
+		} 
 
 	}
 
