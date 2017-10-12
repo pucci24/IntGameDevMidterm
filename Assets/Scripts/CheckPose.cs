@@ -23,7 +23,6 @@ public class CheckPose : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Pose == 0) {
 			if (
 				RightArmB.correctPos == true &&
 				RightArmT.correctPos == true &&
@@ -41,7 +40,7 @@ public class CheckPose : MonoBehaviour {
 			if (CorrectPos == true) {
 				hooray.Play ();
 				Pose += 1;
+			CorrectPos = false;
 			}
 	}
-}
 }
