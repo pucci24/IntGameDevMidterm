@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CheckPose : MonoBehaviour {
 
@@ -14,7 +15,10 @@ public class CheckPose : MonoBehaviour {
 	public CheckPart RightFoot;
 	public bool CorrectPos=false;
 	public ParticleSystem hooray;
-	public int Pose = 0;
+	public int Pose = -1;
+
+	public Text myText; // exposes this variable to the inspector, other scripts can access this too
+	float timer = 6f;
 
 	// Use this for initialization
 	void Start () {
@@ -42,5 +46,18 @@ public class CheckPose : MonoBehaviour {
 				Pose += 1;
 			CorrectPos = false;
 			}
+
+		/*timer -= Time.deltaTime;
+		if (timer <= 0) {
+			Pose += 1;
+			timer = 6f;
+		}
+
+		// set new text to display in the Text UI
+		if (Pose == 0) {
+			myText.text = "Let's start with first position, girls...everyone!";
+		}else if(Pose == 1){
+			myText.text = "Okay now go to second position, keep those feet apart!";
+		}*/
 	}
 }
