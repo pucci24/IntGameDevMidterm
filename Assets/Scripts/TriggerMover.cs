@@ -20,10 +20,13 @@ public class TriggerMover : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(checkPose.Pose==0){
+			this.transform.position = new Vector3 (10f, 10f, 10f);
+		}
+		if(checkPose.Pose==1){
 			this.transform.position = new Vector3 (xpos0, ypos0, zpos0);
 		}
 
-		if(checkPose.Pose==1){
+		if(checkPose.Pose==2){
 			this.transform.position = new Vector3 (xpos1, ypos1, zpos1);
 		}
 	}

@@ -15,13 +15,16 @@ public class CheckPose : MonoBehaviour {
 	public CheckPart RightFoot;
 	public bool CorrectPos=false;
 	public ParticleSystem hooray;
-	public int Pose = -1;
+	public int Pose = 0;
 
 	public Text myText; // exposes this variable to the inspector, other scripts can access this too
-	float timer = 6f;
+	public float timer = 9f;
+	public float timerOG;
 
 	// Use this for initialization
 	void Start () {
+		timerOG = timer;
+		timer = 20f;
 		
 	}
 	
@@ -47,17 +50,20 @@ public class CheckPose : MonoBehaviour {
 			CorrectPos = false;
 			}
 
-		/*timer -= Time.deltaTime;
+		timer -= Time.deltaTime;
 		if (timer <= 0) {
 			Pose += 1;
-			timer = 6f;
+			timer = timerOG;
 		}
 
 		// set new text to display in the Text UI
 		if (Pose == 0) {
+			myText.text = "Welcome to class, I'm sure you'll fit right in! Stretch yourself out, we'll start in a moment.";
+		}
+		else if (Pose == 1) {
 			myText.text = "Let's start with first position, girls...everyone!";
-		}else if(Pose == 1){
+		}else if(Pose == 2){
 			myText.text = "Okay now go to second position, keep those feet apart!";
-		}*/
+		}
 	}
 }
